@@ -91,11 +91,14 @@ export const PremiumFeature: React.FC<PremiumFeatureProps> = ({
 
   return (
     <>
-      {billingTeams.length &&
-      user?.details?.profile?.isEmailVerified &&
-      isCompanyEmail(user?.details?.profile?.email) &&
-      !disabled &&
-      features ? (
+      {
+      // billingTeams.length &&
+      // user?.details?.profile?.isEmailVerified &&
+      // isCompanyEmail(user?.details?.profile?.email) &&
+      // !disabled &&
+      // features
+      true
+      ? (
         <>
           <RequestFeatureModal
             isOpen={openPopup}
@@ -112,8 +115,9 @@ export const PremiumFeature: React.FC<PremiumFeatureProps> = ({
             return React.cloneElement(child as React.ReactElement, {
               onClick: (e: any) => {
                 onClickCallback?.(e);
-                if (isExceedingLimits && isUpgradePopoverEnabled) setOpenPopup(true);
-                else onContinue();
+                // if (isExceedingLimits && isUpgradePopoverEnabled) setOpenPopup(true);
+                // else
+                onContinue();
               },
             });
           })}
